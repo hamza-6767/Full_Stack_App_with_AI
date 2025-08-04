@@ -20,7 +20,7 @@ const RegisterPage = () => {
     }
 
     try {
-      const res = await fetch('/api/register', {
+      const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -42,6 +42,8 @@ const RegisterPage = () => {
   };
 
   return (
+    <div>
+      <h1>Register</h1>
     <form onSubmit={handleSubmit}>
       <input 
         type="email" 
@@ -63,6 +65,11 @@ const RegisterPage = () => {
       />
       <button type="submit">Register</button>
     </form>
+    <div>
+      <p>Already have an account? <a href="/login">Login</a>.
+      </p>
+    </div>
+    </div>
   );
 };
 
